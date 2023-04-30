@@ -1,6 +1,6 @@
 import Table from './table';
 import Model from './popup-modal';
-import { Modal, Button } from 'react-bootstrap'
+import { Button } from 'react-bootstrap'
 import Charts from './chart';
 import '../css/chart.css';
 import { FaPlus } from "react-icons/fa";
@@ -28,25 +28,19 @@ const Dashboard = (props) => {
     const [expensesTotal, setExpensesTotal] = useState(0);
     const [expenses, setExpenses] = useState([]);
 
-    const emptyIncome = {
-        category: '',
-        amount: '',
-        description: '',
-        date: '',
-        division: ''
-    };
     const [show, setShow] = useState(false);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
 
+    //eslint-disable-next-line
     useEffect(() => {
         getAllIncomes();
         getAllExpenses();
       }, []);
 
       const setDataForTable = (value) => {
-        if(type == 'expense') {
+        if(type === 'expense') {
             return setExpenses(details => {
                 return {...details, ...value}
             })
@@ -101,8 +95,8 @@ const Dashboard = (props) => {
         <Col>{incomes && <Charts className="content" incomesTotal={incomesTotal} expensesTotal={expensesTotal}/>}</Col>
       </Row>
     </Container>
-        {type && type=='income' && <Table data={incomes} type='income'/>}
-        {type && type=='expense' &&<Table data={expenses} type='expense'/>}
+        {type && type==='income' && <Table data={incomes} type='income'/>}
+        {type && type==='expense' &&<Table data={expenses} type='expense'/>}
         <Model show={show} handleClose={handleClose} handleShow={handleShow} selectedExpenseData="emptyIncome" selectedIncomeData="emptyIncome" category='add'/>
         
         

@@ -6,8 +6,6 @@ import { FaFilter } from "react-icons/fa";
 import '../css/filter.css';
 import axios from "axios";
 
-import Form from 'react-bootstrap/Form';
-
 const incomeBaseURL = "https://money-manager-9pla.onrender.com/income";
 const expenseBaseURL = "https://money-manager-9pla.onrender.com/expense";
 
@@ -25,7 +23,7 @@ const Filter = (props) => {
     const selectFilter = (e, c, v) => {
         e.preventDefault();
         let baseurl;
-        type == 'income' ? baseurl = incomeBaseURL : baseurl = expenseBaseURL;
+        type === 'income' ? baseurl = incomeBaseURL : baseurl = expenseBaseURL;
         let url = `${baseurl}/?${c}=${v}`;
         getFilterData(url);
     }

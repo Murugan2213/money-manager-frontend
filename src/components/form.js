@@ -57,11 +57,11 @@ const Forms = (props) => {
     }
 
     const handleSave = () => {
-        type == 'income' ? saveIncome(income) : saveExpense(expense);
+        type === 'income' ? saveIncome(income) : saveExpense(expense);
         handleClose();
     }
     const handleEdit = (id) => {
-        type == 'income' ? editIncome(income, id) : editExpense(expense, id);
+        type === 'income' ? editIncome(income, id) : editExpense(expense, id);
         handleClose();
     }
 
@@ -94,31 +94,31 @@ const Forms = (props) => {
       <Form.Group className="mb-3" controlId="formBasicCategory">
         <Form.Label>Category</Form.Label>
         <Form.Control type="text" placeholder="Enter category" 
-          onChange={e => type =='income' ? handleIncome({ category: e.target.value }) : handleExpense({ category: e.target.value })}/>
+          onChange={e => type ==='income' ? handleIncome({ category: e.target.value }) : handleExpense({ category: e.target.value })}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicAmount">
         <Form.Label>Amount</Form.Label>
         <Form.Control type="number" placeholder="Enter the amount" 
-        onChange={e => type =='income' ? handleIncome({ amount: e.target.value }) : handleExpense({ amount: e.target.value })}/>
+        onChange={e => type ==='income' ? handleIncome({ amount: e.target.value }) : handleExpense({ amount: e.target.value })}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicDescription">
         <Form.Label>Description</Form.Label>
         <Form.Control type="text" placeholder="Enter the description" 
-        onChange={e => type =='income' ? handleIncome({ description: e.target.value }) : handleExpense({ description: e.target.value })}/>
+        onChange={e => type ==='income' ? handleIncome({ description: e.target.value }) : handleExpense({ description: e.target.value })}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicDate">
         <Form.Label>Date</Form.Label>
         <Form.Control type="Date" placeholder="Enter the date" 
-        onChange={e => type =='income' ? handleIncome({ date: e.target.value }) : handleExpense({ date: e.target.value })}/>
+        onChange={e => type ==='income' ? handleIncome({ date: e.target.value }) : handleExpense({ date: e.target.value })}/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicDivision">
         <Form.Label>Division</Form.Label>
         <Form.Control type="text" placeholder="Enter the division" 
-        onChange={e => type =='income' ? handleIncome({ division: e.target.value }) : handleExpense({ division: e.target.value })}/>
+        onChange={e => type ==='income' ? handleIncome({ division: e.target.value }) : handleExpense({ division: e.target.value })}/>
       </Form.Group>
 
 

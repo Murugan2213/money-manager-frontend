@@ -33,7 +33,7 @@ const Table = (props) => {
   const editIncome = (data, e) => {
     console.log(data, '&&&&&&&&&&&&');
     setShow(true);
-    if(type == 'income') {
+    if(type === 'income') {
       return setselectedIncomeData(details => {
         return {...details, ...data}
     })

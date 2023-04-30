@@ -1,7 +1,6 @@
 import { Doughnut } from 'react-chartjs-2';
-import { useState, useEffect } from "react";
-import { ArcElement } from "chart.js";
-import Chart from "chart.js/auto";
+import {Chart, ArcElement} from 'chart.js'
+Chart.register(ArcElement);
 
 
 const Charts = (props) => {

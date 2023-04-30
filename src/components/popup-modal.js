@@ -1,7 +1,6 @@
-import { useState } from 'react';
+
 import React from 'react';
-import { Modal, Button } from 'react-bootstrap'
-import Navbar from './navbar';
+import { Modal } from 'react-bootstrap'
 import Tab from 'react-bootstrap/Tab';
 import Tabs from 'react-bootstrap/Tabs';
 import Forms from './form';
@@ -9,7 +8,7 @@ import '../css/popup.css';
 
 const Model = (props) => {
 
-    const { show, handleClose, handleShow, selectedIncomeData,  selectedExpenseData} = props;
+    const { show, handleClose} = props;
 
     let selectedIncomeDataEdit = null;
     let selectedExpenseDataEdit = null;
