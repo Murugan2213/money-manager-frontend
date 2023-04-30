@@ -1,0 +1,26 @@
+
+.icon {
+    
+    font-size: 4rem;
+    margin-right: 1rem;
+    
+}
+
+.head{
+    font-size: 3rem;
+    font-weight: 300;
+}
+
+.headerr{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;    
+}
+
+.filter{
+ justify-content: end;
+}
+
+.header-pd {
+    padding-bottom: 2em;
+}
