@@ -14,7 +14,7 @@ const Header = () => {
           <div className="headerr">
 
             <div><FaPiggyBank className='icon' /></div>
-            <div><span className='head'> Dashboard </span></div>
+            <div><span className='head'> Money Manager Dashboard </span></div>
 
           </div>
           <div>

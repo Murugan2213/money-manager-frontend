@@ -20,9 +20,6 @@ const expenseBaseURL = "https://money-manager-9pla.onrender.com/expense/list";
 const Dashboard = (props) => {
 
     const { type } = props;
-    let intotal = 0;
-    let extotal = 0;
-    
     const [incomes, setIncomes] = useState([]);
     const [incomesTotal, setIncomesTotal] = useState(0);
     const [expensesTotal, setExpensesTotal] = useState(0);
@@ -35,6 +32,32 @@ const Dashboard = (props) => {
 
     //eslint-disable-next-line
     useEffect(() => {
+      const  getAllIncomes = async () => {
+        await axios.get(incomeBaseURL).then(res => {
+            setIncomes(res.data);
+            findIncomeTotal(res.data);
+        })
+      }
+      const  getAllExpenses = async () => {
+        await axios.get(expenseBaseURL).then(res => {
+            setExpenses(res.data);
+            findExpenseTotal(res.data);
+        })
+      }
+      const findIncomeTotal = (data) => {
+        let intotal = 0
+        data.data.forEach(element => {
+          intotal += element.amount;
+          });
+          setIncomesTotal(intotal);
+    }
+    const findExpenseTotal = (data) => {
+      let extotal = 0
+        data.data.forEach(element => {
+          extotal += element.amount;
+          });
+          setExpensesTotal(extotal);
+    }
         getAllIncomes();
         getAllExpenses();
       }, []);
@@ -50,33 +73,6 @@ const Dashboard = (props) => {
             })
         }
     }
-
-      const  getAllIncomes = async () => {
-        await axios.get(incomeBaseURL).then(res => {
-            setIncomes(res.data);
-            findIncomeTotal(res.data);
-        })
-      }
-
-      const findIncomeTotal = (data) => {
-          data.data.forEach(element => {
-            intotal += element.amount;
-            });
-            setIncomesTotal(intotal);
-      }
-      const findExpenseTotal = (data) => {
-          data.data.forEach(element => {
-            extotal += element.amount;
-            });
-            setExpensesTotal(extotal);
-      }
-
-      const  getAllExpenses = async () => {
-        await axios.get(expenseBaseURL).then(res => {
-            setExpenses(res.data);
-            findExpenseTotal(res.data);
-        })
-      }
 
 
 
